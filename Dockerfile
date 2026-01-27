@@ -3,12 +3,12 @@ FROM maven:3.9.6-eclipse-temurin-17 AS build
 
 WORKDIR /app
 
-# Copia apenas arquivos de dependência primeiro (cache)
+# Copia POM e settings primeiro (cache de deps)
 COPY pom.xml .
 COPY settings.xml /root/.m2/settings.xml
 
-# Baixa dependências (usa cache do Docker)
-RUN mvn -B -e -DskipTests dependency:go-offline
+# Baixa dependências (SEM go-offline)
+RUN mvn -B -DskipTests dependency:resolve dependency:resolve-plugins
 
 # Agora copia o código
 COPY src ./src
@@ -22,8 +22,7 @@ FROM eclipse-temurin:17-jre-alpine
 
 WORKDIR /app
 
-# Copia o jar gerado
-COPY --from=build /app/target/*.jar app.jar
+COPY --from=build /app/target/*jar app.jar
 
 EXPOSE 8080
 
