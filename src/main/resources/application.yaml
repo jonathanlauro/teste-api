@@ -5,7 +5,7 @@ spring:
 zoro:
   log:
     enabled: true
-    flush-interval-ms: 30000
+    flush-interval-ms: 1000
     project-id: "ZL_demo_key"
     endpoint: "https://larafogos-zorolog-ingestor.2zf9jv.easypanel.host"
     tenant-id: "ZL_demo_key"

@@ -20,7 +20,7 @@ public class TesteApiApplication {
 		SpringApplication.run(TesteApiApplication.class, args);
 	}
 
-	// 1800 ms ≈ 3 minutos / 100 logs
+//	 1800 ms ≈ 3 minutos / 100 logs
 	@Scheduled(fixedRate = 800)
 	public void gerarLogs() {
 		int atual = counter.incrementAndGet();
