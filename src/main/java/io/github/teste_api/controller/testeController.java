@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class testeController {
 
     @GetMapping
-    String teste() {
-        throw new RuntimeException("Teste de erro");
+    String teste() throws Exception {
+        throw new Exception("Erro de teste");
     }
 }

@@ -9,5 +9,5 @@ zoro:
     project-id: "ZL_demo_key"
     endpoint: "https://larafogos-zorolog-ingestor.2zf9jv.easypanel.host"
     tenant-id: "ZL_demo_key"
-    api-key: "ZL_demo_key"
+    api-key: "f7881829-199f-4623-ae28-a1c2db8aea85"
     batch-size: 50
